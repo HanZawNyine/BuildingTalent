@@ -75,10 +75,12 @@ int main()
 
     print(head);
 
-    cout<<"\nAfter Inserted A new Data "<<endl;
-    //push
-    push(&head , 99);
-    print(head);
+    head->next = third->next;
+//
+//    cout<<"\nAfter Inserted A new Data "<<endl;
+//    //push
+//    push(&head , 99);
+//    print(head);
 
 //    append(&head, 88);
 //    cout << "\nAfter Appended " << endl;
