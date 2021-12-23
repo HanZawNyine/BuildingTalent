@@ -48,6 +48,7 @@ void insertAfter(Node* head_ref, int new_data) {
         cout << "the given previous node cannot be NULL";
         return;
     }
+
     Node* new_node = new Node();
     new_node->data = new_data;
     new_node->next = head_ref->next;
@@ -56,7 +57,7 @@ void insertAfter(Node* head_ref, int new_data) {
 
 int main()
 {
-    /*Node* head = NULL;
+    Node* head = NULL;
     Node* second = NULL;
     Node* third = NULL;
 
@@ -71,25 +72,20 @@ int main()
     third->data = 3;
     third->next = NULL;
 
-    print(head);*/
+    print(head);
 
     //cout << "\nAfter Inserted A new Data " << endl;
     ////push
     //push(&head, 99);
     //print(head);
 
-        //append(&head, 88);
-        //cout << "\nAfter Appended " << endl;
-        //print(head);
-
-    /*    insertAfter(third->next,100);
-        puts("\nAfter Insert Data");
+        /*append(&head, 88);
+        cout << "\nAfter Appended " << endl;
         print(head);*/
 
-    int aa=0;
-    printf_s("Enter Your name : ");
-    scanf_s("%d", &aa);
-    printf_s("your name is %d", aa);
+        insertAfter(head->next,100);
+        puts("\nAfter Insert Data");
+        print(head);
 
     return 0;
 }
