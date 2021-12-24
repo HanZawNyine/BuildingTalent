@@ -62,7 +62,8 @@ void deleteNode(Node** head_ref, int key) {
 
     if (temp != NULL && temp->data == key) {
         *head_ref = temp->next;
-        free(temp);
+        printf("delete address : %d\n", temp->next);
+        printf("delete data : %d\n", temp->data);
         return;
     }
     // Find the key to be deleted
@@ -76,7 +77,8 @@ void deleteNode(Node** head_ref, int key) {
 
     // Remove the node
     prev->  next = temp->next;
-    free(temp);
+    printf("delete address : %d\n", temp->next);
+    printf("delete data : %d\n", temp->data);
 }
 
 
@@ -99,7 +101,7 @@ int main()
 
     print(head);
     puts("\nAfter Delete Data");
-    deleteNode(&head, 5);
+    deleteNode(&head, 2);
     print(head);
 
     //cout << "\nAfter Inserted A new Data " << endl;
@@ -116,6 +118,5 @@ int main()
         print(head);*/
 
        
-
     return 0;
 }
