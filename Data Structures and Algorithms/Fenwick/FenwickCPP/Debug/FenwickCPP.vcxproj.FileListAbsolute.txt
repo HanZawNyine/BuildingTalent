@@ -1,1 +1,2 @@
 D:\BuildingTalent\C and C Plus Plus\Fenwick\FenwickCPP\Debug\FenwickCPP.exe
+D:\BuildingTalent\Data Structures and Algorithms\Fenwick\FenwickCPP\Debug\FenwickCPP.exe
