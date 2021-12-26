@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\BuildingTalent\C and C Plus Plus\LinkedList\SinglyLIst 2\Source.cpp(65,16): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'Node *'
+D:\BuildingTalent\C and C Plus Plus\LinkedList\SinglyLIst 2\Source.cpp(80,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'Node *'
+  SinglyLIst 2.vcxproj -> D:\BuildingTalent\C and C Plus Plus\LinkedList\SinglyLIst 2\Debug\SinglyLIst 2.exe

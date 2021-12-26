@@ -1,0 +1,7 @@
+D:\BuildingTalent\C and C Plus Plus\Fenwick\Fenwick-CSharp\bin\Debug\Fenwick-CSharp.exe.config
+D:\BuildingTalent\C and C Plus Plus\Fenwick\Fenwick-CSharp\bin\Debug\Fenwick-CSharp.exe
+D:\BuildingTalent\C and C Plus Plus\Fenwick\Fenwick-CSharp\bin\Debug\Fenwick-CSharp.pdb
+D:\BuildingTalent\C and C Plus Plus\Fenwick\Fenwick-CSharp\obj\Debug\Fenwick-CSharp.csproj.AssemblyReference.cache
+D:\BuildingTalent\C and C Plus Plus\Fenwick\Fenwick-CSharp\obj\Debug\Fenwick-CSharp.csproj.CoreCompileInputs.cache
+D:\BuildingTalent\C and C Plus Plus\Fenwick\Fenwick-CSharp\obj\Debug\Fenwick-CSharp.exe
+D:\BuildingTalent\C and C Plus Plus\Fenwick\Fenwick-CSharp\obj\Debug\Fenwick-CSharp.pdb
