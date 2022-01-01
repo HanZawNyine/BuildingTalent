@@ -1,0 +1,88 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-primary text-white mb-4">
+                                <h5 class="card card-header text-center"> Posts</h5>
+                                <h3 class="card-body text-center">{{ posts }}</h3>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="{% url 'postAll' %}">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <h5 class="card card-header text-center"> For Sale</h5>
+                                <h3 class="card-body text-center">{{ forsale }}</h3>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning text-white mb-4">
+                                <h5 class="card card-header text-center">Sold Out</h5>
+                                <h3 class="card-body text-center">{{ soldout }}</h3>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <h5 class="card card-header text-center">Categories</h5>
+                                <h3 class="card-body text-center">{{ category }}</h3>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="{% url 'category' %}">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Today Comments
+                        </div>
+                        <div class="card-body" style="width:100%">
+                            <table id="datatablesSimple" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Product</th>
+                                    <th>Date</th>
+                                    <th>Details</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for comment in comments %}
+                                    <tr>
+                                        <td>{{ comment.name }}</td>
+                                        <td>{{ comment.phoneno }}</td>
+                                        <td>{{ comment.product }}</td>
+                                        <td>{{ comment.created_at }}</td>
+                                        <td>
+                                           <a href="{% url 'commentView' comment.id %}" class="btn btn-warning">View Details</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                       <div class="card-footer">
+                        <a href="{% url 'allcomments' %}" class="btn btn-primary">View All</a>
+                    </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h1>{{ comments.name }}</h1>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Created</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ comments.phoneno }}</td>
+                    <td>{{ comments.product }}</td>
+                    <td>{{ comments.created_at }}</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="table-responsive">{{ comments.description }}</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="4"><a href="{% url 'commentUpdate' comments.id %}"
+                                       class="btn btn-warning m-3">Update</a><a
+                            href="{% url 'commentDelete' comments.id %}" class="btn btn-danger">Remove</a><a
+                            href="{% url 'allcomments' %}" class="btn btn-primary m-3">Cancel</a></td>
+                </tr>
+
+
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
+{% endblock content %}

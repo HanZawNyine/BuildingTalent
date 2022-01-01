@@ -1,0 +1,48 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            All Posts <a href="{% url 'addPost' %}" class="btn btn-primary">add post</a>
+                        </div>
+
+                        <div class="card-body" style="width:100%">
+                            <table id="datatablesSimple" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Product</th>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Created</th>
+                                    <th>Details</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for post in posts %}
+                                    <tr>
+                                        <td>{{ post.name }}</td>
+                                        <td>{{ post.state }}</td>
+                                        <td>{{ post.price }}</td>
+                                        <td>{{ post.type }}</td>
+                                        <td>{{ post.category.name }}</td>
+                                        <td>{{ post.created_at }}</td>
+                                        <td>
+                                            <a href="{% url 'postDetails' post.id %}" class="btn btn-warning">view</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock content %}

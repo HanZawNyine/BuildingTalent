@@ -1,0 +1,10 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ AddpostForm }}<br>
+    <input type="submit" class="btn btn-primary" value="addpost">
+    <a href="{% url 'postAll' %}" class="btn btn-primary">cancel</a>
+    </form>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h1>Categories<a href="{% url 'categoryAdd' %}">Add</a></h1>
+
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for categories in category %}
+                    <tr>
+                        <td>{{ categories.name }}</td>
+                        <td><a href="{% url 'categoryUpdate' categories.id %}" class="btn btn-warning">update</a></td>
+                        <td><a href="{% url 'categoryDelete' categories.id %}" class="btn btn-danger">remove</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock content %}

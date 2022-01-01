@@ -1,0 +1,43 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            All Comments
+                        </div>
+                        <div class="card-body" style="width:100%">
+                            <table id="datatablesSimple" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Product</th>
+                                    <th>Date</th>
+                                    <th>Details</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for comment in comments %}
+                                    <tr>
+                                        <td>{{ comment.name }}</td>
+                                        <td>{{ comment.phoneno }}</td>
+                                        <td>{{ comment.product }}</td>
+                                        <td>{{ comment.created_at }}</td>
+                                        <td>
+                                           <a href="{% url 'commentView' comment.id %}" class="btn btn-warning">view</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock content %}

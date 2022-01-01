@@ -1,0 +1,76 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <div class="card m-3">
+        <div class="card-header bg-primary btn-success">
+            <b>{{ product.state }}</b>
+        </div>
+        <div class="card-body">
+            <table class="table table-sm">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Category</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.state }}</td>
+                    <td>{{ product.type }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.category.name }}</td>
+                </tr>
+                <tr>
+                    <td>Created_at</td>
+                    <td colspan="4">{{ product.created_at }}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td colspan="4">{{ product.description }}</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td>
+                        <a href="{% url 'postUpdate' product.id %}" class="btn btn-warning m-3">update</a>
+                        <a href="{% url 'postDelete' product.id %}" class="btn btn-danger">remove</a>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="products">
+            {% for pp  in posts %}
+                <div class="product">
+                    <a href="/{{ pp.images }}">
+                        <img src="/{{ pp.images }}" alt="{{ pp.post }}" class="product-image">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div>
+        {% for comment in comments %}
+            <table class="table">
+                <caption class="text-secondary">{{ comment.created_at }}</caption>
+                <thead>
+                <tr>
+                    <th scope="col" class="text-primary">{{ comment.name }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-secondary">{{ comment.description }}</td>
+                </tr>
+                </tbody>
+            </table>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <h5>Add Categories</h5>
+    <form action="" METHOD="post">
+        {% csrf_token %}
+        {{ categoryForm }}
+        <input type="submit"  class="btn btn-danger" value="Add">
+        <a href="{% url 'category' %}" class="btn btn-success">Cancel</a>
+    </form>
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'jade/components/master.html' %}
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>Are You Sure To Delete ?</h1>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Created</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ comments.name }}</td>
+                        <td>{{ comments.phoneno }}</td>
+                        <td>{{ comments.product }}</td>
+                        <td>{{ comments.created_at }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="table-responsive">{{ comments.description }}</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <input type="submit" class="btn btn-danger" value="Remove">
+                            <a href="{% url 'commentView' comments.id %}" class="btn btn-primary m-3">Cancel</a>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </form>
+
+{% endblock content %}
