@@ -32,7 +32,7 @@ class Product(models.Model):
 
 class PostImage(models.Model):
     post = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
-    images = models.FileField(upload_to='static/post/')
+    images = models.ImageField(upload_to='static/images/',null=True,blank=True)
 
     def __str__(self):
         return self.post.name

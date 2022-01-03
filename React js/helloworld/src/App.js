@@ -1,9 +1,10 @@
 import './App.css';
+import Broswe from './components/Broswe';
 
 function App() {
   return (
     <div>
-      <h1>helo World</h1>      
+      <Broswe name="Han Zaw"/>
     </div>
   );
 }

@@ -4,16 +4,16 @@
         {% for pst in posts %}
             <div class="col">
                 <div class="card ">
-                    <img src="/{{ pst.images }}" class="card-img-top" alt="..." width="300px"
+                    <img src="/{{ pst.postimage_set.all.0.images }}" class="card-img-top" alt="pst.productimage_set.all.0.images" width="300px"
                          height="300px">
                     <div class="card-body">
-                        <h5 class="card-title">Name : {{ pst.post.name }}</h5>
-                        <p class="card-text">State : {{ pst.post.state }} Types : {{ pst.product.type }}  </p>
-                        <p class="card-text">Price : {{ pst.post.price }}MMK </p>
-                        <p class="card-text"> Date : {{ pst.post.created_at }} </p>
+                        <h5 class="card-title">Name : {{ pst.name }}</h5>
+                        <p class="card-text">State : {{ pst.state }} Types : {{ pst.product.type }}  </p>
+                        <p class="card-text">Price : {{ pst.price }}MMK </p>
+                        <p class="card-text"> Date : {{ pst.created_at }} </p>
                     </div>
                     <div class="card-footer">
-                        <a href="{% url 'product.detail' pst.post.id %}" class="btn btn-primary">View Details</a>
+                        <a href="{% url 'product.detail' pst.id %}" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>

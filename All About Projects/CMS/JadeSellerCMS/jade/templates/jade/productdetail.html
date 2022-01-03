@@ -37,10 +37,10 @@
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="products">
-            {% for pp  in posts %}
+            {% for pp  in product.postimage_set.all %}
                 <div class="product">
                     <a href="/{{ pp.images }}">
-                        <img src="/{{ pp.images }}" alt="{{ pp.post }}" class="product-image">
+                        <img src="/{{ pp.images }}" alt="{{pp.images }}" class="product-image">
                     </a>
                 </div>
             {% endfor %}
@@ -50,7 +50,7 @@
     <div class="card m-3">
         <form action="" method="POST">
             {% csrf_token %}
-            {{ formSet.management_form }}
+{#            {{ formSet.management_form }}#}
             {% for form in formSet %}
                 {{ form }}
             {% endfor %}

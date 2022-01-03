@@ -28,7 +28,7 @@ class AddPost(ModelForm):
         fields = '__all__'
 
 
-class AddPostImages(ModelForm):
+class AddImages(ModelForm):
     class Meta:
         model = PostImage
         fields = '__all__'

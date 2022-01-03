@@ -1,15 +1,11 @@
 {% extends 'jade/components/master.html' %}
 {% block content %}
-    <h1>Product Name :{{ productname.name }}</h1>
-    <form action="" method="POST">
+    <form action="" method="post">
         {% csrf_token %}
-        {{ formSet.management_form }}
         {% for form in formSet %}
-            {{ form }}
-            <hr>
+        {{ form}}<hr/>
         {% endfor %}
-        <input type="submit" class="btn btn-primary" value="addpost">
+        <input type="submit" class="btn btn-primary" value="addimage">
         <a href="{% url 'postAll' %}" class="btn btn-primary">cancel</a>
     </form>
-
 {% endblock content %}

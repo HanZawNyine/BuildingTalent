@@ -1,6 +1,5 @@
 import datetime
 
-from django.forms import inlineformset_factory
 from django.shortcuts import render, redirect
 
 from jade.forms import *
@@ -9,32 +8,21 @@ from jade.models import *
 
 # Create your views here.
 def home(request):
-    # post = PostImage.objects.values_list("post", flat=True).distinct()
-    # print(post)
-    posts = PostImage.objects.all()
-    # post = posts.values_list("post__name",flat=True).distinct()
-    print(posts)
+    posts = Product.objects.all().order_by("-created_at")
     return render(request, 'jade/home.html', {'posts': posts})
 
 
 def productdetails(request, id):
-    addPostFormSet = inlineformset_factory(Product, Customer, fields=('name', 'phoneno','description',),
-                                           extra=10)
-
     product = Product.objects.get(id=id)
-    post = product.postimage_set.all()
     comments = Customer.objects.filter(product__name=product).order_by("-created_at")
-    # formSet = addPostFormSet(initial={'product': product})
-    customer = CommentBox(initial={'product': product})
     customer = CommentBox(initial={'product': product})
     if request.method == "POST":
-        customer = CommentBox(request.POST,initial={'product': product})
-        # formSet = addPostFormSet(request.POST,instance=Product)
+        customer = CommentBox(request.POST, initial={'product': product})
         if customer.is_valid():
             customer.save()
             return redirect('/productdetails/' + id)
     return render(request, 'jade/productdetail.html',
-                  {"product": product, "posts": post, "formSet": customer, "comments": comments})
+                  {"product": product, "formSet": customer, "comments": comments})
 
 
 def dashboard(request):
@@ -121,10 +109,9 @@ def postAll(request):
 
 def postDetails(request, id):
     product = Product.objects.get(id=id)
-    post = product.postimage_set.all()
     comments = Customer.objects.filter(product__name=product).order_by("-created_at")
     return render(request, 'jade/posts/postDetails.html',
-                  {"product": product, "posts": post, "comments": comments})
+                  {"product": product, "comments": comments})
 
 
 def postAddproduct(request):
@@ -134,22 +121,20 @@ def postAddproduct(request):
         if postForm.is_valid():
             postForm.save()
             lastId = Product.objects.latest('id')
-            # print(lastId.id)
             return redirect("/postall/addimage/" + str(lastId.id))
     return render(request, 'jade/posts/addpost.html', {'AddpostForm': postForm})
 
 
 def postAddImage(request, id):
-    addPostFormSet = inlineformset_factory(Product, PostImage, fields=('post','images',))
     product = Product.objects.get(id=id)
-
-    formSet = addPostFormSet(instance=product)
+    postadd = AddImages(initial={'post': product})
     if request.method == "POST":
-        formSet = addPostFormSet(request.POST,instance=product)
-        if formSet.is_valid():
-            formSet.save()
+        postadd = AddImages(request.POST,initial={'post': product})
+        if postadd.is_valid():
+            print(request.POST)
+            postadd.save()
             return redirect("/postall/details/" + id)
-    return render(request, 'jade/posts/addPostImages.html', {'formSet': formSet, "productname": product})
+    return render(request, 'jade/posts/addPostImages.html', {'formSet': postadd})
 
 
 def postUpdate(request, id):

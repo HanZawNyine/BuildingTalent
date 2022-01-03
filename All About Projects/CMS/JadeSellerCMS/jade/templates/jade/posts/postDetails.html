@@ -45,10 +45,10 @@
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="products">
-            {% for pp  in posts %}
+            {% for pp  in product.postimage_set.all %}
                 <div class="product">
-                    <a href="/{{ pp.images }}">
-                        <img src="/{{ pp.images }}" alt="{{ pp.post }}" class="product-image">
+                    <a href="/{{ pp }}">
+                        <img src="/{{ pp.images }}" alt="/{{  pp.images  }}" class="product-image">
                     </a>
                 </div>
             {% endfor %}
