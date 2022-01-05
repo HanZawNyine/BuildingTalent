@@ -1,0 +1,61 @@
+{% extends "components/base.html" %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <div class="card-group text-center">
+        <div class="card text-white bg-primary m-3" style="max-width: 18rem;">
+            <div class="card-header">Posts</div>
+            <div class="card-body">
+                <h1 class="card-title">{{ products}}</h1>
+                <p class="card-text"></p>
+            </div>
+            <a href="#" class="card-footer text-white text-left stretched-link">view details...</a>
+        </div>
+     <div class="card text-white bg-success m-3" style="max-width: 18rem;">
+            <div class="card-header">Comments</div>
+            <div class="card-body">
+                <h1 class="card-title">{{ comments.count}}</h1>
+            </div>
+            <a href="#" class="card-footer text-white text-left stretched-link">view details...</a>
+        </div>
+     <div class="card text-white bg-danger m-3" style="max-width: 18rem;">
+            <div class="card-header">Categories</div>
+            <div class="card-body">
+                <h1 class="card-title">{{categories}}</h1>
+            </div>
+            <a href="#" class="card-footer text-white text-left stretched-link">view details...</a>
+        </div><div class="card text-white bg-warning m-3" style="max-width: 18rem;">
+            <div class="card-header">Test</div>
+            <div class="card-body">
+                <h1 class="card-title">0</h1>
+            </div>
+            <a href="#" class="card-footer text-white text-left stretched-link">view details...</a>
+        </div>
+    </div>
+
+        <table class="table">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Product</th>
+      <th scope="col">Created</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for comment in comments %}
+    <tr>
+      <th scope="row">{{ comment.id }}</th>
+      <td>{{ comment.name }}</td>
+      <td>{{ comment.phoneno }}</td>
+      <td>{{ comment.product }}</td>
+      <td>{{ comment.created }}</td>
+      <td><a href="#" class="btn btn-warning">view</a></td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

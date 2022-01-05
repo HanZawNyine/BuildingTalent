@@ -1,0 +1,53 @@
+{% extends "components/base.html" %}
+{% load static %}
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+{% block content %}
+    <div class="product-detail">
+        <a href="{% if product.postimage_set.all.0.image %} /media/{{ product.postimage_set.all.0.image }}{% else %}{% static "img/no_image.png" %}{% endif %} ">
+            <img src="{% if product.postimage_set.all.0.image %} /media/{{ product.postimage_set.all.0.image }}{% else %}
+{% static "img/no_image.png" %}{% endif %}">
+        </a>
+
+        <h1>{{ product.name }}</h1>
+        <h2>
+            <a class="btn btn-outline-primary" href="{{ product.category.get_absolute_url }}">
+                {{ product.category }}
+            </a>
+        </h2>
+
+        <p class="price text-success">${{ product.price }}</p>
+
+        {{ product.description|linebreaks }}
+    </div>
+    <div>
+        {% for img in product.postimage_set.all %}
+            <a href="/media/{{ img.image }}">
+                <img src="/media/{{ img.image }}" alt="{{ img.image }}" width="300px">
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+    <h5>Total comments {{ product.comment_set.all.count }} </h5>
+        {% for comment in product.comment_set.all %}
+            <table class="table-dark text-dark">
+          <thead>
+            <tr>
+                  <th scope="col">{{ comment.name }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ comment.created }}</td>
+            </tr>
+            <tr>
+              <td>{{ comment.comment }}</td>
+            </tr>
+          </tbody>
+        </table>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}
