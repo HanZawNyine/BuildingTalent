@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: helvetica, sans-serif;
+    background-color: black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,7 +21,7 @@ a:hover {
     color: #77b6e2;
 }
 
-a.button, input[type="submit"] {
+a.button {
     color: #fff;
     background: #5993bb;
     border-radius: 4px;

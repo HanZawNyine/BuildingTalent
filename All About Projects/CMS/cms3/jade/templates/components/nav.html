@@ -1,25 +1,26 @@
 {% url 'shop:product_list' as home %}
 {% url 'shop:dashboard' as dashboard %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="{% url 'shop:product_list' %}">National Cyber City</a>
+        <a class="navbar-brand" href="{% url 'shop:product_list' %}"><b>National Cyber City</b></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link {% if request.path == home %}active{% endif %}" aria-current="page" href="{% url 'shop:product_list' %}">Categories</a>
+          <a class="nav-link {% if request.path == home %}active{% endif %}" aria-current="page" href="{% url 'shop:product_list' %}"><b>Categories</b></a>
         </li>
           <li class="nav-item">
-         <a class="nav-link {% if request.path == dashboard %}active{% endif %}" aria-current="page" href="{% url 'shop:dashboard' %}">Dashboard</a>
+         <a class="nav-link {% if request.path == dashboard %}active{% endif %}" aria-current="page" href="{% url 'shop:dashboard' %}"><b>Dashboard</b></a>
         </li>
       </ul>
 
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+      <form class="d-flex" method="POST" action="/search">
+          {% csrf_token %}
+        <input class="form-control me-2 btn-dark text-white" type="search" placeholder="Search" aria-label="Search" name="search">
+        <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search" id="searchview"></i></button>
       </form>
     </div>
   </div>

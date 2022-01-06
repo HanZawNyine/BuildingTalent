@@ -1,0 +1,41 @@
+{% extends "components/base.html" %}
+{% load static %}
+{% block title %}Delete Comment{% endblock %}
+{% block content %}
+    <h1 class="text-center text-white">Are You Sure To Delete ?</h1>
+<table class="table table-dark">
+  <thead>
+    <tr class="table table-dark">
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Product</th>
+      <th scope="col">Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ comment.id }}</th>
+      <td>{{ comment.name }}</td>
+      <td>{{ comment.phoneno }}</td>
+      <td>{{ comment.product }}</td>
+        <td><b>{{ comment.created }}</b></td>
+    </tr>
+  <tr>
+      <td colspan="5">{{ comment.comment }}</td>
+  </tr>
+    <tr>
+
+        <td >
+            <form action="" method="post">
+              {% csrf_token %}
+                <button type="submit" class="btn btn-danger">remove</button>
+            </form>
+        </td>
+        <td colspan="4"><a class="btn btn-primary" href="{%  url 'shop:commentdetails' comment.id %}">cancel</a></td>
+
+  </tr>
+
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "components/base.html" %}
+{% load static %}
+{% block title %} Product{% endblock %}
+{% block content %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ productfrom.management_form }}
+        <table class="table table-dark">
+            {% for form in productfrom %}
+                <tr>
+                    <td>{{ form.name }}</td>
+                    <td>{{ form }}</td>
+                </tr>
+            {% endfor %}
+        {{ productIMage.management_form }}
+         {% for image in  productIMage %}
+            <tr>
+                <td> {{ image }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+
+    </table>
+
+    <input type="submit" class="btn btn-outline-warning" value="add post"/>
+    <a class="btn btn-outline-primary" href="{% url 'shop:product_list' %}">cancel</a>
+    </form>
+
+{% endblock %}

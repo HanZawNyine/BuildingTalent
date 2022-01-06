@@ -1,0 +1,29 @@
+{% extends "components/base.html" %}
+{% load static %}
+{% block title %}All Categories{% endblock %}
+{% block content %}
+    <h1 class="text-white">All Categories <a href="{% url 'shop:addcategories' %}" class="btn btn-warning m-3">add category</a></h1>
+<table class="table table-dark">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">slug</th>
+      <th scope="col">update</th>
+      <th scope="col">remove</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for category in categories %}
+          <tr>
+          <th>{{ category.id }}</th>
+           <td>{{ category.name }}</td>
+           <td>{{ category.slug }}</td>
+           <td><a href="{% url 'shop:categoryUpdate' category.id %}" class="btn btn-outline-warning">update</a></td>
+           <td><a href="{% url 'shop:categoryDelete' category.id %}" class="btn btn-outline-danger">remove</a></td>
+          </tr>
+
+      {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
