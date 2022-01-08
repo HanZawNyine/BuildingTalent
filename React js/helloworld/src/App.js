@@ -1,12 +1,10 @@
 import './App.css';
-import HookArray from './components/HookArray';
-import HookInput from './components/HookInput';
+import Hook from './components/Hook';
 
 function App() {
   return (
-    <div style={{textAlign:"center"}}>
-      <HookArray/>    
-      {/* <HookInput/> */}
+    <div style={{ textAlign: "center" }}>
+      <Hook/>
     </div>
   );
 }
