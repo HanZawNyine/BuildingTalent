@@ -1,6 +1,9 @@
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 from django.forms import inlineformset_factory
 from django.shortcuts import render, get_object_or_404, redirect
 
+from .filters import *
 from .forms import *
 
 
@@ -18,14 +21,14 @@ def product_list(request, category_slug=None):
 
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    Comment = CommentForm(initial={"product":product})
+    Comment = CommentForm(initial={"product": product})
     if request.method == "POST":
-        Comment = CommentForm(request.POST,initial={"product":product})
+        Comment = CommentForm(request.POST, initial={"product": product})
         if Comment.is_valid():
             print(Comment.cleaned_data)
             Comment.save()
-            return redirect("/"+str(id)+"/"+ slug)
-    return render(request, 'jade/product_detail.html', {'product': product,"CommentForm":Comment})
+            return redirect("/" + str(id) + "/" + slug)
+    return render(request, 'jade/product_detail.html', {'product': product, "CommentForm": Comment})
 
 
 def dashboard(request):
@@ -43,7 +46,9 @@ def allproduct(request):
 
 def allcomment(request):
     comments = Comment.objects.all().order_by('-created')
-    return render(request, 'jade/allcommments.html', {"comments": comments})
+    commentObj = CommentFilter(request.GET, queryset=comments)
+    comments = commentObj.qs
+    return render(request, 'jade/allcommments.html', {"comments": comments, "commentObj": commentObj})
 
 
 def search(request):
@@ -57,7 +62,7 @@ def search(request):
 
 
 def commentdetails(request, id):
-    comment = Comment.objects.get(id=id);
+    comment = Comment.objects.get(id=id)
     return render(request, 'jade/commentdetails.html', {'comment': comment})
 
 
@@ -77,6 +82,7 @@ def productdelete(request, id, slug):
         return redirect("shop:allproduct")
     return render(request, "jade/productdelete.html", {'product': product})
 
+
 def productadd(request):
     imageFormset = inlineformset_factory(Product, PostImage, fields=('image',), extra=20)
     productForm = ProductForm()
@@ -88,10 +94,11 @@ def productadd(request):
             productForm.save()
             productIMage.save()
             return redirect("/allproducts")
-    return render(request, 'jade/productadd.html', {'productfrom': productForm,'productIMage': productIMage,})
+    return render(request, 'jade/productadd.html', {'productfrom': productForm, 'productIMage': productIMage, })
+
 
 def productupdate(request, id, slug):
-    imageFormset = inlineformset_factory(Product, PostImage, fields=('image',),extra=20)
+    imageFormset = inlineformset_factory(Product, PostImage, fields=('image',), extra=20)
     pro = get_object_or_404(Product, id=id, slug=slug, available=True)
     productForm = ProductForm(instance=pro)
     productIMage = imageFormset(instance=pro)
@@ -102,7 +109,8 @@ def productupdate(request, id, slug):
             productForm.save()
             productIMage.save()
             return redirect("/allproducts")
-    return render(request, 'jade/productupdate.html', {'productfrom': productForm,'productIMage': productIMage,})
+    return render(request, 'jade/productupdate.html', {'productfrom': productForm, 'productIMage': productIMage, })
+
 
 def commentadd(request):
     commentForm = CommentForm()
@@ -111,21 +119,24 @@ def commentadd(request):
         if commentForm.is_valid():
             commentForm.save()
             return redirect("shop:allcomment")
-    return render(request,"jade/addcomment.html",{"commentForm":commentForm})
+    return render(request, "jade/addcomment.html", {"commentForm": commentForm})
 
-def commentUpdate(request,id):
-    comment  = Comment.objects.get(id=id)
+
+def commentUpdate(request, id):
+    comment = Comment.objects.get(id=id)
     commentForm = CommentForm(instance=comment)
     if request.method == "POST":
-        commentForm = CommentForm(request.POST,instance=comment)
+        commentForm = CommentForm(request.POST, instance=comment)
         if commentForm.is_valid():
             commentForm.save()
-            return redirect("/commentdetails/"+str(id))
-    return render(request,"jade/commentUpdate.html",{"commentForm":commentForm})
+            return redirect("/commentdetails/" + str(id))
+    return render(request, "jade/commentUpdate.html", {"commentForm": commentForm})
+
 
 def allcategories(request):
     categories = Category.objects.all()
-    return render(request,'jade/all categories.html',{"categories":categories})
+    return render(request, 'jade/all categories.html', {"categories": categories})
+
 
 def addcategory(request):
     categoryForm = CategoryForm()
@@ -134,21 +145,50 @@ def addcategory(request):
         if categoryForm.is_valid():
             categoryForm.save()
             return redirect("shop:allcategories")
-    return render(request,'jade/addcategories.html',{"categoryForm":categoryForm})
+    return render(request, 'jade/addcategories.html', {"categoryForm": categoryForm})
 
-def categoryUpdate(request,id):
+
+def categoryUpdate(request, id):
     category = Category.objects.get(id=id)
     categoryForm = CategoryForm(instance=category)
     if request.method == "POST":
-        categoryForm = CategoryForm(request.POST,instance=category)
+        categoryForm = CategoryForm(request.POST, instance=category)
         if categoryForm.is_valid():
             categoryForm.save()
             return redirect("shop:allcategories")
-    return render(request,'jade/categoryupdate.html',{"categoryForm":categoryForm})
+    return render(request, 'jade/categoryupdate.html', {"categoryForm": categoryForm})
 
-def categoryDelete(request,id):
+
+def categoryDelete(request, id):
     category = Category.objects.get(id=id)
     if request.method == "POST":
         category.delete()
         return redirect("shop:allcategories")
-    return render(request,'jade/categorydelete.html',{"category":category})
+    return render(request, 'jade/categorydelete.html', {"category": category})
+
+
+def register(request):
+    registerform = RegisterForm()
+    if request.method == "POST":
+        registerform = RegisterForm(request.POST)
+        if registerform.is_valid():
+            registerform.save()
+            return redirect("shop:dashboard")
+
+    return render(request, 'jade/register.html', {"registerform": registerform})
+
+
+def userLogin(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        # print(username,password)
+        user = authenticate(request, username=username, password=password)
+        # print(user)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+        else:
+            messages.error(request, message="User and Password is Valid")
+            return redirect("shop:login")
+    return render(request, 'jade/login.html')

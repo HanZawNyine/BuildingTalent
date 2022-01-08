@@ -1,10 +1,12 @@
 import './App.css';
-import Broswe from './components/Broswe';
+import HookArray from './components/HookArray';
+import HookInput from './components/HookInput';
 
 function App() {
   return (
-    <div>
-      <Broswe name="Han Zaw"/>
+    <div style={{textAlign:"center"}}>
+      <HookArray/>    
+      {/* <HookInput/> */}
     </div>
   );
 }

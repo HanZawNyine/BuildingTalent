@@ -24,4 +24,9 @@ urlpatterns = [
     path('addcategories', views.addcategory, name='addcategories'),
     path('categoryUpdate/<int:id>', views.categoryUpdate, name='categoryUpdate'),
     path('categoryDelete/<int:id>', views.categoryDelete, name='categoryDelete'),
+
+    # auth
+    path('register', views.register, name='register'),
+    path('login', views.userLogin, name='login'),
+
 ]

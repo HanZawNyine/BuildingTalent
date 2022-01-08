@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'jade.apps.JadeConfig'
+    'jade.apps.JadeConfig',
+    'django_filters',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [

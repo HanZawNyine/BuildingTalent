@@ -1,0 +1,23 @@
+{% extends "components/base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+    <h1 class="text-white">Login</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for message in messages %}
+            <div class="alert alert-danger" role="alert">{{ message }}</div>
+        {% endfor %}
+        <div class="mb-3">
+            <label class="text-white" for="">Username</label>
+            <input type="text" name="username" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label class="text-white" for="">Password</label>
+            <input type="password" name="password" class="form-control"/>
+        </div>
+        <input class="btn text-white btn-outline-primary" type="submit" value="Login"/>
+        <a class="btn text-white btn-outline-primary">Cancel</a>
+    </form>
+{% endblock %}
