@@ -26,9 +26,9 @@ def product_list(request, category_slug=None):
 @login_required(login_url='/login')
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    Comment = CommentForm(initial={"product":product,"name":request.user.customer})
+    Comment = CommentForm(initial={"product": product, "name": request.user.customer})
     if request.method == "POST":
-        Comment = CommentForm(request.POST,initial={"product":product,"name":request.user.customer})
+        Comment = CommentForm(request.POST, initial={"product": product, "name": request.user.customer})
         if Comment.is_valid():
             print(Comment.cleaned_data)
             Comment.save()
@@ -99,17 +99,19 @@ def productdelete(request, id, slug):
 
 
 @login_required(login_url='/login')
-@admin_only
+@allow_roles(roles=["admin"])
 def productadd(request):
-    imageFormset = inlineformset_factory(Product, PostImage, fields=('image',), extra=20)
+    imageFormset = inlineformset_factory(Product, PostImage, fields=('image',), extra=10)
     productForm = ProductForm()
     productIMage = imageFormset()
     if request.method == "POST":
-        productForm = ProductForm(request.POST)
-        productIMage = imageFormset(request.POST)
+        productForm = ProductForm(request.POST, request.FILES)
+        productIMage = imageFormset(request.POST, request.FILES)
         if productForm.is_valid():
-            productForm.save()
-            productIMage.save()
+            productForm.save(commit=False)
+            # img = productForm.save(commit=False)
+            # form = productIMage(instance=img)
+            # productIMage.save(commit=False)
             return redirect("/allproducts")
     return render(request, 'jade/productadd.html', {'productfrom': productForm, 'productIMage': productIMage, })
 
@@ -123,7 +125,7 @@ def productupdate(request, id, slug):
     productIMage = imageFormset(instance=pro)
     if request.method == "POST":
         productIMage = imageFormset(request.POST, instance=pro)
-        productForm = ProductForm(request.POST, instance=pro)
+        productForm = ProductForm(request.POST,instance=pro)
         if productForm.is_valid():
             productForm.save()
             productIMage.save()

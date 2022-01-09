@@ -13,9 +13,9 @@ def authicated_users(view_fun):
 
 
 def admin_only(view_fun):
-    def wrapper(request):
+    def wrapper(request,*args,**kwargs):
         if request.user.groups.first().name == "admin":
-            return view_fun(request)
+            return view_fun(request,*args,**kwargs)
 
         if request.user.groups.first().name == "customer":
             return redirect('/customer_profile')
