@@ -47,12 +47,23 @@ class PostImage(models.Model):
         return self.product.name
 
 
-class Comment(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
-    phoneno = models.CharField(max_length=20)
-    comment = models.TextField()
+class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    name = models.CharField(max_length=200, null=True)
+    profile = models.ImageField(upload_to='profiles/',null=True,blank=True)
+    email = models.EmailField(max_length=200, null=True)
+    phone = models.CharField(max_length=200, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+
+
+class Comment(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE,null=True)
+    name = models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True)
+    comment = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.comment

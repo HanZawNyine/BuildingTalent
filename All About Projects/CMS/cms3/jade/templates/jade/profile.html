@@ -1,0 +1,19 @@
+{% extends "components/base.html" %}
+{% load static %}
+{% block title %}Customer Profile Settings{% endblock %}
+{%  load widget_tweaks %}
+{% block content %}
+
+    <h1 class="text-white">Customer Profile : {{ request.user.customer.name }}</h1>
+    <img width="50%" height="50%" src="/media/{{ request.user.customer.profile }}" alt="{{ request.user.customer.profile }}"/>
+    <form class="m-3" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+      {% for pp in profile %}
+            <h5 class="text-white">{{ pp.label}}</h5>
+               {{ pp|add_class:'form-control mb-3' }}
+            {% endfor %}
+    <input type="submit" class="btn btn-outline-warning" value="update">
+    <a href="{% url 'shop:product_list' %}" class="btn btn-outline-primary">cancel</a>
+    </form>
+
+{% endblock %}

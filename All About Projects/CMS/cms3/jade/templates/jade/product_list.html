@@ -1,5 +1,7 @@
 {% extends "components/base.html" %}
 {% load static %}
+
+{% load i18n%}
 {% block title %}
     {% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}

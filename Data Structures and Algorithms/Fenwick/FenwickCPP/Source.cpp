@@ -61,9 +61,9 @@ int* constructBITree(int arr[], int n)
 	for (int i = 0; i < n; i++)
 		updateBIT(BITree, n, i, arr[i]);
 
-	// Uncomment below lines to see contents of BITree[]
-	for (int i=1; i<=n; i++)
-		 cout << BITree[i] << " ";
+	//// Uncomment below lines to see contents of BITree[]
+	//for (int i=1; i<=n; i++)
+	//	 cout << BITree[i] << " ";
 
 	return BITree;
 }
