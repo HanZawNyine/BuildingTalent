@@ -1,0 +1,1 @@
+D:\BuildingTalent\Software design pattern\1-Singleton Pattern\Singleton-CPP\Debug\Singleton-CPP.exe
