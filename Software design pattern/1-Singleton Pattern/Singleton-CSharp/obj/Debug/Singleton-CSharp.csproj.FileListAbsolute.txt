@@ -1,0 +1,7 @@
+D:\BuildingTalent\Software design pattern\1-Singleton Pattern\Singleton-CSharp\bin\Debug\Singleton-CSharp.exe.config
+D:\BuildingTalent\Software design pattern\1-Singleton Pattern\Singleton-CSharp\bin\Debug\Singleton-CSharp.exe
+D:\BuildingTalent\Software design pattern\1-Singleton Pattern\Singleton-CSharp\bin\Debug\Singleton-CSharp.pdb
+D:\BuildingTalent\Software design pattern\1-Singleton Pattern\Singleton-CSharp\obj\Debug\Singleton-CSharp.csproj.AssemblyReference.cache
+D:\BuildingTalent\Software design pattern\1-Singleton Pattern\Singleton-CSharp\obj\Debug\Singleton-CSharp.csproj.CoreCompileInputs.cache
+D:\BuildingTalent\Software design pattern\1-Singleton Pattern\Singleton-CSharp\obj\Debug\Singleton-CSharp.exe
+D:\BuildingTalent\Software design pattern\1-Singleton Pattern\Singleton-CSharp\obj\Debug\Singleton-CSharp.pdb
