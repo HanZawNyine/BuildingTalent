@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4fec1acb-91ef-496f-82b1-8de1bdd6daa0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Binary Search Tree/.vs/Binary Search Tree/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../Binary Search Tree/.vs/Binary Search Tree/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Binary Search Tree/.vs/Binary Search Tree/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../Binary Search Tree/.vs/Binary Search Tree/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../django/Django-Lessons-Projects" beforeDir="false" afterPath="$PROJECT_DIR$/../../../django/Django-Lessons-Projects" afterDir="false" />
+    <list default="true" id="ea1d86e4-eeea-48f0-acaa-74166b1a7c1c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../redblacktree-java/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/aa.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/aa.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/aa.layout" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/bin/Debug/aa.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/hzn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/obj/Debug/main.o" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,14 +20,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="23xyPj9XcW9Ic3tNMTugIadGs0d" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="23yIfCwD7nSUGQ29A1CH8BNjt6z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -54,12 +62,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4fec1acb-91ef-496f-82b1-8de1bdd6daa0" name="Changes" comment="" />
-      <created>1642690013461</created>
+      <changelist id="ea1d86e4-eeea-48f0-acaa-74166b1a7c1c" name="Changes" comment="" />
+      <created>1642700003462</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1642690013461</updated>
-      <workItem from="1642690016524" duration="154000" />
+      <updated>1642700003462</updated>
+      <workItem from="1642700005919" duration="31000" />
     </task>
     <servers />
   </component>
@@ -67,6 +75,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/redblacktree_python$main.coverage" NAME="main Coverage Results" MODIFIED="1642690047903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/redblacktree_python$main.coverage" NAME="main Coverage Results" MODIFIED="1642700031797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
