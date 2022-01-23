@@ -27,5 +27,5 @@ class bruteZip:
         print("[!] Password not found, try other wordlist.")
 
 if __name__ == '__main__':
-  brute =   bruteZip('wordlist.zip','wordlist.txt')
+  brute =   bruteZip('wordlist.zip','wordlists.txt')
   brute.brute()

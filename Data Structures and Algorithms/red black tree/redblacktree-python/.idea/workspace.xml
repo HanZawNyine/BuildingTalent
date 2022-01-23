@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea1d86e4-eeea-48f0-acaa-74166b1a7c1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../redblacktree-java/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/aa.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/aa.depend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/aa.layout" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/bin/Debug/aa.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/hzn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../replace file string with line number/obj/Debug/main.o" beforeDir="false" />
-    </list>
+    <list default="true" id="ea1d86e4-eeea-48f0-acaa-74166b1a7c1c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
