@@ -2,42 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8fe1e1c-22ac-4971-beb0-15c3d79c0810" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../All About Projects/CMS/cms3/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../All About Projects/CMS/cms3/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../All About Projects/CMS/cms3/jade/templates/jade/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../All About Projects/CMS/cms3/jade/templates/jade/product_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/.vs/FenwickCPP/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/.vs/FenwickCPP/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/.vs/FenwickCPP/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/.vs/FenwickCPP/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/FenwickCPP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/FenwickCPP.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/FenwickCPP.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/FenwickCPP.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/FenwickCPP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/FenwickCPP.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/FenwickCPP.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/FenwickCPP.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/Source.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/Source.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/vc142.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Debug/vc142.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Source.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/Fenwick/FenwickCPP/Source.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/.vs/spanningTree-CPP/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/.vs/spanningTree-CPP/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/.vs/spanningTree-CPP/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/.vs/spanningTree-CPP/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/.vs/spanningTree-CPP/v16/ipch/AutoPCH/e2dfc74e0200dc3b/SOURCE.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/.vs/spanningTree-CPP/v16/ipch/AutoPCH/e2dfc74e0200dc3b/SOURCE.ipch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/Source.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/Source.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.tlog/spanningTree-CPP.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/spanningTree-CPP.tlog/spanningTree-CPP.lastbuildstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/vc142.idb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Data Structures and Algorithms/SpanningTree/spanningTree-CPP/Debug/vc142.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Python/h4k3rTools/brute pdf/brutePDF.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python/h4k3rTools/brute pdf/brutePDF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Software design pattern/1-Singleton Pattern/Singleton-CPP/.vs/Singleton-CPP/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../Software design pattern/1-Singleton Pattern/Singleton-CPP/.vs/Singleton-CPP/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Software design pattern/1-Singleton Pattern/Singleton-CPP/.vs/Singleton-CPP/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../Software design pattern/1-Singleton Pattern/Singleton-CPP/.vs/Singleton-CPP/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_env/Lib/site-packages/pip-21.2.3.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/../my_env/Lib/site-packages/pip-21.2.3.dist-info/RECORD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_env/Scripts/pip3.10.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../my_env/Scripts/pip3.10.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_env/Scripts/pip3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../my_env/Scripts/pip3.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,22 +25,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="mysite" type="Python.DjangoServer" factoryName="Django server">
-      <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="mysite.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\BuildingTalent\django\my_env\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
@@ -98,6 +63,8 @@
       <updated>1642265549485</updated>
       <workItem from="1642265550701" duration="255000" />
       <workItem from="1642265897051" duration="636000" />
+      <workItem from="1643026949861" duration="83000" />
+      <workItem from="1643035872178" duration="119000" />
     </task>
     <servers />
   </component>
