@@ -1,0 +1,78 @@
+{% load static %}
+{% url 'social:post_list' as home %}
+{% url 'social:register' as register %}
+{% url 'social:userlogin' as userlogin %}
+{% url 'social:userlogout' as userlogout %}
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="{% url 'social:post_list' %}">
+                <img src="{% static 'social/img/Ncc.png' %}" height="30" alt="" loading="lazy"
+                     style="margin-top: -3px;"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                    aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link {% if request.path == home %} active{% endif %}"
+                               href="{% url 'social:post_list' %}" rel="nofollow">Home</a>
+                        </li>
+                    {% endif %}
+                </ul>
+                {% if request.user.is_authenticated %}
+                    <ul class="navbar-nav d-flex flex-row">
+                        <!-- Icons -->
+                        <li class="nav-item me-3 me-lg-0">
+                            <form method="post" action="{% url 'social:post_search' %}">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <div class="form-outline">
+                                        <input id="search-input" type="search" class="form-control" name="search"/>
+                                        <label class="form-label" for="form1">Search</label>
+                                    </div>
+                                    <button id="search-button" type="submit" class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav d-flex flex-row">
+                        <!-- Icons -->
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link " href="{% url 'social:customerprofile' %}" rel="nofollow">
+                                <img src="{% if request.user.customer_profile.profile_pic %}/media/{{ request.user.customer_profile.profile_pic}}{% else %}{% static 'social/img/no_image.png' %}{% endif %}" width="30px" height="30px" alt="{{ request.user.customer}}" loading="lazy"
+                                     style="border-radius: 50%;margin-top: -3px;"/>
+                                {{ request.user.username }}
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link {% if request.path == userlogout %} active{% endif %}"
+                               href="{% url 'social:userlogout' %}" rel="nofollow">Logout</a>
+                        </li>
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav d-flex flex-row">
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link {% if request.path == register %} active{% endif %}"
+                               href="{% url 'social:register' %}" rel="nofollow">Register </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link  {% if request.path == userlogin %} active{% endif %}"
+                               href="{% url 'social:userlogin' %}" rel="nofollow">Login</a>
+                        </li>
+                    </ul>
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+</header>

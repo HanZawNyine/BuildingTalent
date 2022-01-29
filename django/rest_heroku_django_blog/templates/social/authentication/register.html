@@ -1,0 +1,43 @@
+{% extends 'social/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block title %}Registration{% endblock %}
+{% block content %}
+    <!-- Jumbotron -->
+    <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-0 h4">Registration</h1>
+    </div>
+
+    <!--Main layout-->
+    <main class="mt-4 mb-5 container">
+        <div class="row ">
+           <div class="col">
+                <form method="post">
+                {% csrf_token %}
+                {% for register in register_form %}
+                    <div class="mb-3">
+                        {{ register.label}}
+                        {{ register|add_class:'form-control'}}
+                        <div class="alert-danger">{{ register.errors }}</div>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    register
+                </button>
+            </form>
+           </div>
+         <div class="col container p-5 mt-5">
+             <a class="nav-link" href="{% provider_login_url 'github' %}" rel="nofollow">
+                                <i class="fab fa-github me-3"></i>Login With Github
+                            </a>
+              <a class="nav-link" href="{% provider_login_url 'google' %}" rel="nofollow">
+                                <i class="fab fa-google me-3"></i>Login With Google
+                            </a>
+                </div>
+        </div>
+    </main>
+    <!--Main layout-->
+
+{% endblock %}

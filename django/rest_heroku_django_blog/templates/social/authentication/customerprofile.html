@@ -1,0 +1,88 @@
+{% extends 'social/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}User Profile{% endblock %}
+{% block content %}
+    <!-- Jumbotron -->
+    <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-0 h4">User Profile</h1>
+    </div>
+
+    <!--Main layout-->
+    <main class="mt-4 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <a href="">
+                        <div class="mb-4">
+                            {% if  request.user.customer_profile.profile_pic %}
+                                <img src="/media/{{ request.user.customer_profile.profile_pic }}"
+                                     class="img-fluid shadow-2-strong  mb-4"
+                                     alt="{{ request.user.customer }}" loading="lazy"
+                                     style="border-radius: 50%" width="400px"/>
+                            {% else %}
+                                <img src="{% static "social/img/no_image.png" %}"
+                                     class="img-fluid shadow-2-strong rounded mb-4" alt=""/>
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>Full Name : {{ customer.user.first_name }} {{ customer.user.last_name }}</h5>
+                    <h5>Username : {{ customer.user.username }}</h5>
+                    <h5>Email : {{ customer.user.email }}</h5>
+                    <h5>Phone : {{ customer.phone }}</h5>
+                    {% if request.user == customer.user %}
+                    <div class="row mt-3">
+                        <div class="col">
+                            <a href="{% url 'social:post_add' %}" class="btn btn-success btn-block mb-4">
+                                Add Post
+                            </a>
+
+                        </div>
+                        <div class="col">
+                            <a href="{% url 'social:customer_update_profile' %}" class="btn btn-primary btn-block mb-4">
+                                update profile
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <hr/>
+                <section class="border-bottom mb-4">
+                    {{ customer.description|linebreaks }}
+                </section>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+
+                {% for post in posts %}
+                    <div class="col">
+                        <div class="card">
+                            <img src="{% if post.post_images.all.0.images %}/media/{{ post.post_images.all.0.images }}{% else %}{% static "social/img/no_image.png" %}{% endif %}"
+                                 class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.body|truncatewords:30|linebreaks }}</p>
+                                <p class="card-text"><small class="text-muted">{{ post.publish }}</small></p>
+                                <a href="{{ post.get_absolute_url }}"
+                                   class="btn btn-outline-primary">Read</a>
+{#                                <a href="{{ post.get_update_url }}" class="btn btn-outline-success">Update</a>#}
+                                 {% if request.user == customer.user %}
+                                <a href="{{ post.get_delete_url }}" class="btn btn-outline-danger">Remove</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No Post avaliable</p>
+                {% endfor %}
+
+            </div>
+        </div>
+    </main>
+    <!--Main layout-->
+
+{% endblock %}

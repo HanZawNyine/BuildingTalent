@@ -1,0 +1,77 @@
+{% extends 'social/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+    <!-- Jumbotron -->
+    <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-0 h4">{{ post.title }}</h1>
+    </div>
+
+    <!--Main layout-->
+    <main class="mt-4 mb-5">
+        <div class="container">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="mb-4">
+                    <!--Section: Post data-mdb-->
+                    <section class="border-bottom mb-4">
+                        <a href="{% if post.post_images.all.0 %}/media/{{ post.post_images.all.0.images }}{% endif %}">
+                            <img src="{% if post.post_images.all.0 %}/media/{{ post.post_images.all.0.images }}{% else %}{% static "social/img/no_image.png" %}{% endif %}"
+                                 class="img-fluid shadow-2-strong rounded mb-4" alt=""/>
+                        </a>
+
+                        <div class="row align-items-center mb-4">
+                            <div class="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
+                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (23).jpg"
+                                     class="rounded shadow-1-strong me-2"
+                                     height="35" alt="" loading="lazy"/>
+                                <span> Published <u>{{ post.publish }}</u> by</span>
+                                <a href="{% url 'social:customer_other_profile' post.author.username %}"
+                                   class="text-dark">{{ post.author.first_name }} {{ post.author.last_name }}</a>
+                            </div>
+
+                            <div class="col-lg-6 text-center text-lg-end">
+                                <button type="button" class="btn btn-primary px-3 me-1"
+                                        style="background-color: #3b5998;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary px-3 me-1"
+                                        style="background-color: #55acee;">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary px-3 me-1"
+                                        style="background-color: #0082ca;">
+                                    <i class="fab fa-linkedin"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary px-3 me-1">
+                                    <i class="fas fa-comments"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <!--Section: Post data-mdb-->
+
+                    <!--Section: Text-->
+                    <section>
+                        <p>
+                            {{ post.body|linebreaks }}
+                        </p>
+                        <div class="container">
+                            <form method="post">
+                                {% csrf_token %}
+                                <a href="{% url 'social:customerprofile' %}" class="col m-3 btn btn-warning">cancel</a>
+                                <button type="submit" class="col m-3 btn btn-danger">delete</button>
+                            </form>
+
+                        </div>
+                    </section>
+                    <!--Section: Text-->
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Main layout-->
+
+{% endblock %}

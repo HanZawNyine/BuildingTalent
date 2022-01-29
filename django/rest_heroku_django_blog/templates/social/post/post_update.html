@@ -1,0 +1,40 @@
+{% extends 'social/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}Update Post{% endblock %}
+{% block content %}
+    <!-- Jumbotron -->
+    <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-0 h4">Update Post</h1>
+    </div>
+
+    <!--Main layout-->
+    <main class="mt-4 mb-5">
+        <div class="container">
+            <div class="container">
+                <form method="post">
+                    {% csrf_token %}
+                    {% for add_post in add_post_form %}
+                        {{ add_post.label }}
+                        {{ add_post|add_class:'form-control' }}
+                    {% endfor %}
+                    <hr/>
+{#                    {{ formset.management_form }}#}
+{#                    {% for formset in image_formset %}#}
+{#                        <div class="form-group">#}
+{#                        {{ formset.as_p }}#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+                    <div class="form-group">
+                        <label>Upload images</label>
+                        <input required name="images" type="file" multiple class="form-control-file">
+                    </div>
+                    <a href="{% url 'social:customerprofile' %}" class="col m-3 btn btn-primary">cancel</a>
+                    <button type="submit" class="col m-3 btn btn-warning">update</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!--Main layout-->
+
+{% endblock %}

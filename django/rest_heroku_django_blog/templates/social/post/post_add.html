@@ -1,0 +1,39 @@
+{% extends 'social/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}Add Post{% endblock %}
+{% block content %}
+    <!-- Jumbotron -->
+    <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-0 h4">Add Post</h1>
+    </div>
+
+    <!--Main layout-->
+    <main class="mt-4 mb-5">
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {#                {{ add_post_form }}#}
+                {#                {{ add_post_form.errors }}#}
+                {% for add_post in add_post_form %}
+                    <div class="mb-3">
+                        {{ add_post.label }}
+                        {{ add_post|add_class:'form-control' }}
+                        <div class="alert-danger">{{ add_post.errors }}</div>
+                    </div>
+                {% endfor %}
+                <hr/>
+                <div class="form-group m-3">
+                    <label>Upload images</label>
+                    <input required name="images" type="file" multiple class="form-control-file">
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    Publish
+                </button>
+            </form>
+        </div>
+    </main>
+    <!--Main layout-->
+
+{% endblock %}

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Post, PostImage, Comment
+from .models import Post, PostImage, Comment, Customer
 
 
 # Register your models here.
@@ -15,9 +15,6 @@ class PostAdmin(admin.ModelAdmin):
     ordering = ("status", "publish")
 
 
-@admin.register(PostImage)
-class PostImageAdmin(admin.ModelAdmin):
-    pass
-
-
+admin.site.register(PostImage)
 admin.site.register(Comment)
+admin.site.register(Customer)

@@ -1,0 +1,62 @@
+{% extends 'social/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}User Update Profile{% endblock %}
+{% block content %}
+    <!-- Jumbotron -->
+    <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-0 h4">User Update Profile</h1>
+    </div>
+
+    <!--Main layout-->
+    <main class="mt-4 mb-5">
+        <div class="container">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <img src="{% if request.user.customer_profile.profile_pic %}/media/{{ request.user.customer_profile.profile_pic}}{% else %}{% static 'social/img/no_image.png' %}{% endif %}"
+                         class="img-fluid shadow-2-strong rounded mb-4" alt="{{ request.user.customer }}" loading="lazy"
+                         style="margin-top: -3px;"/>
+                </div>
+                <div class="mb-4">
+                    {{ customerprofile.profile_pic.label }}
+                    {{ customerprofile.profile_pic|add_class:'form-control' }}
+                </div>
+                <div class="mb-4">
+                    {{ registerform.username.label }}
+                    {{ registerform.username|add_class:'form-control' }}
+                </div>
+                <div class="mb-4">
+                    {{ registerform.first_name.label }}
+                    {{ registerform.first_name|add_class:'form-control' }}
+                </div>
+                <div class="mb-4">
+                    {{ registerform.last_name.label }}
+                    {{ registerform.last_name|add_class:'form-control' }}
+                </div>
+                <div class="mb-4">
+                    {{ registerform.email.label }}
+                    {{ registerform.email|add_class:'form-control'|attr:'type="email"' }}
+                </div>
+                {{ registerform.errors }}
+
+                <div class="mb-3">
+                    {{ customerprofile.phone.label }}
+                    {{ customerprofile.phone|add_class:'form-control' }}
+                    {{ customerprofile.errors }}
+                </div>
+                <div class="mb-3">
+                    {{ customerprofile.description.label }}
+                    {{ customerprofile.description|add_class:'form-control' }}
+                    {{ customerprofile.errors }}
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    update profile
+                </button>
+            </form>
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+{% endblock %}
