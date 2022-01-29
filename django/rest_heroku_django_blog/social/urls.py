@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 
 from . import views
 
@@ -17,4 +17,5 @@ urlpatterns = [
     path('customer_update_profile', views.customer_update_profile, name="customer_update_profile"),
     path('postdelete/<int:year>/<int:month>/<int:day>/<slug:post>', views.post_delete, name="post_delete"),
     # path('post_update/<int:year>/<int:month>/<int:day>/<slug:post>', views.post_update, name="post_update"),
+
 ]
