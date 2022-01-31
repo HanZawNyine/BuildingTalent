@@ -1,6 +1,3 @@
-from typing import List
-from django.core import paginator
-from django.core.checks import messages
 from django.shortcuts import redirect, render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
